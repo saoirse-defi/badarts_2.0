@@ -1,0 +1,47 @@
+<!--Start of navigation bar-->
+<nav class="navbar navbar-expand-md sticky-top">
+    <a class="navbar-brand" href="index.html"><img src="assets/img/logo4.jpg" alt="bad arts logo" /></a>
+    <a class="navbar-brand" href="index.html">
+        <h2 class="nav-title">Bad Arts Entertainment</h2>
+    </a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#bad-nav" aria-controls="bad-nav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fas fa-bars fa-1x"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="bad-nav">
+        <ul class="navbar-nav ml-auto" id="other-items">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'my_profile' %}">Profile</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="videos.html">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="shop.html">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            {% else %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="videos.html">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="shop.html">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'signup' %}">Signup</a>
+                </li>
+            {% endif %}
+            
+        </ul>
+    </div>
+</nav>
+<!--End of Navigation bar-->
