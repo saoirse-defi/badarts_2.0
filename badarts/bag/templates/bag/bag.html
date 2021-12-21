@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="overlay"></div>
+<h2 class="center-align">Shopping Bag</h2>
+
+{% if bag_items %}
+    <div class="row">
+        <table class="responsive-table desktop-only-item">
+            <thead>
+                <tr>
+                    <th scope="col">Product Image</th>
+                    <th scope="col">Product Info</th>
+                    <th scope="col">Size</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Subtotal</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            {% for item in bag_items %}
+            <tr>
+                {% if item.product.image %}
+                <td class="hide-image">
+                    <img class="img-responsive bag-image" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                </td>
+                {% else %}
+                <td class="hide-image">
+                    <img class="img-responsive bag-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                </td>
+                {% endif %}
+                <td>
+                    <p>{{ item.product.name }}</p>
+                </td>
+                <td>
+                    <p>{% if item.product.has_sizes %}{{ item.size }}g{% else %}No size{% endif %}</p>
+                </td>
+                <td>
+                    <p>€{{ item.product.price }}</p>
+                </td>
+                <td>
+                    <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.product.sku %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input class="form-control" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item-id="{{ item.product_id }}" id="id_qty_{{ item.product_id }}"/>
+                        </div>
+                        {% if item.product.has_sizes %}
+                        <input type="hidden" name="product_size" value="{{ item.size }}">
+                        {% endif %}
+                        <button class="waves-effect waves-light btn-small" type="submit">Update</button>
+                    </form>
+                </td>
+                <td>
+                    €{{ item.product.price }}
+                </td>
+                <td>
+                    <form class="form remove-form" method="POST" action="{% url 'remove_from_bag' item.product.sku %}">
+                        {% csrf_token %}
+                        {% if item.product.has_sizes %}
+                        <input type="hidden" name="product_size" value="{{ item.size }}">
+                        {% endif %}
+                        <button class="waves-effect waves-light btn-small remove-item" id="remove_{{ item.product_id }}" type="submit" data-product_size="{{ item.size }}"><span class="material-icons-outlined">delete</span></button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="mobile-bag center-align">
+            {% for item in bag_items %}
+            <div class="mobile-bag-item center-align">
+                {% if item.product.image %}
+                    <img class="img-responsive bag-image" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                {% else %}
+                    <img class="img-responsive bag-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                {% endif %}
+                <h4>{{ item.product.name }}</h4>
+                <p>{% if item.product.has_sizes %}{{ item.size }}g{% else %}No size{% endif %}</p>
+                <p> Price: €{{ item.product.price }}</p>
+                <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.product.sku %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input class="form-control" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item-id="{{ item.product_id }}" id="id_qty_{{ item.product_id }}" style="width: 25%;"/>
+                    </div>
+                    {% if item.product.has_sizes %}
+                    <input type="hidden" name="product_size" value="{{ item.size }}">
+                    {% endif %}
+                    <button class="waves-effect waves-light btn-small" type="submit">Update</button>
+                </form>
+                <p>Subtotal: €{{ item.product.price }}</p>
+                <form class="form remove-form" method="POST" action="{% url 'remove_from_bag' item.product.sku %}">
+                    {% csrf_token %}
+                    {% if item.product.has_sizes %}
+                    <input type="hidden" name="product_size" value="{{ item.size }}">
+                    {% endif %}
+                    <button class="waves-effect waves-light btn-small remove-item" id="remove_{{ item.product_id }}" type="submit" data-product_size="{{ item.size }}"><span class="material-icons-outlined">delete</span></button>
+                </form><br>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <h6 class="center-align"><strong>Bag Total: €{{ total|floatformat:2 }} Euro</strong></h6>
+        <h6 class="center-align">Delivery: €{{ delivery|floatformat:2 }}</h6>
+        <h4 class="center-align"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h4>
+        {% if free_delivery_delta > 0 %}
+            <p class="center-align">
+                You could get free delivery by spending just <strong>€{{ free_delivery_delta }}</strong> more!
+            </p>
+        {% endif %}
+        <div class="center-align">
+            <a href="{% url 'products' %}" class="waves-effect waves-light btn-small">
+                <span>Keep Shopping</span>
+            </a>
+            <a href="{% url 'checkout' %}" class="waves-effect waves-light btn-small">
+                <span>Checkout</span>
+            </a>
+        </div>
+    </div>
+{% else %}
+    <p class="center-align">Your bag is empty.</p>
+    <p class="center-align">
+        <a href="{% url 'products' %}" class="waves-effect waves-light btn-small">
+            <span>Browse Marketplace</span>
+        </a>
+    </p>
+{% endif %}
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script>
+
+</script>
+{% endblock %}

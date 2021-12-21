@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="wrapper">
+    <a href="shop.html"><i class="fas fa-arrow-left"></i></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="product-img">
+                    {% if product.image_url %}
+                        <img class="card-img responsive" src="{{ product.image_url }}" alt="{{ product.name }}">
+                    {% else %}
+                        <img class="card-img responsive" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="product-text">
+                    <h2>{{ product.name }}</h2><br>
+                    <span class="product-price">Was <s>24.99</s> Now 14.99 Save 35%</span><br><br>
+                    <p>Item Description:<br>{{ product.description }}</p>
+                    <form class="checkout" action="{% url 'add_to_bag' product.sku %}" method="POST">
+                        {% csrf_token %}
+                        <label style="color:white;">Quantity: </label>
+                        <input type="number" class="checkout-qty" name="quantity" placeholder="1" required/><br><br>
+                        <button class="btn btn-warning" type="submit">Add to cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
