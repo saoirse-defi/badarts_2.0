@@ -43,6 +43,10 @@ INSTALLED_APPS = [
     'badarts',
     'homepage',
     'profile',
+    'products',
+    'bag',
+    'checkout',
+    'static',
 
     'allauth',
     'allauth.account',
@@ -50,6 +54,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
 
     'crispy_forms',
+    'django_bootstrap5'
 ]
 
 MIDDLEWARE = [
@@ -139,6 +144,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = ( os.path.join('static'), )
 
 SITE_ID = 2
 

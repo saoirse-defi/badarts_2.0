@@ -3,6 +3,333 @@
 
 {% block content %}
 
-<h1>Bad Arts Test</h1>
+<!--Start of main carousel-->
+<div class="container-fluid" id="carousel-slide">
+    <div id="carousel-main" class="carousel slide" data-ride="carousel" data-interval="15000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="assets/img/ab.jpg" class="d-block w-100" id="r1" alt="1" />
+                <div class="carousel-caption">
+                    <div class="container jumbo-text">
+                        <h3 class="display-4">Frequent + Fresh Music</h3>
+                        <p class="lead">An independent hip hop label based in<br>Limerick City.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/bmn.jpg" class="d-block w-100" id="r3" alt="1">
+                <div class="carousel-caption">
+                    <div class="container jumbo-text">
+                        <h3 class="display-4">Frequent + Fresh Music</h3>
+                        <p class="lead">An independent hip hop label based in<br>Limerick City.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/mbn.jpg" class="d-block w-100" id="r4" alt="1">
+                <div class="carousel-caption">
+                    <div class="container jumbo-text">
+                        <h3 class="display-4">Frequent + Fresh Music</h3>
+                        <p class="lead">An independent hip hop label based in<br>Limerick City.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-main" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carousel-main" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+        </div>
+    </div>
+</div>
+<!--End of main carousel-->
+
+<!--Start of desktop rotating card carousel, will be hidden for bootstrap sm breakpoint and below-->
+<div class="container-fluid" id="carousel-releases">
+    <h2 class="text-center">Discography</h2>
+    <div id="carousel3" class="carousel slide d-none d-md-block" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card-wrapper mx-auto">
+                            <div class="content">
+                                <div class="face-front">
+                                    <img src="assets/img/crettin.jpg" class="img-responsive" alt="a10" />
+                                </div>
+                                <div class="face-back">
+                                    <div class="card-body">
+                                        <h2 class="artist-releases-song-title">The Crettin LP</h2>
+                                        <h4 class="artist-releases-title">A10Sin</h4>
+                                        <p class="artist-p">Production: DJ Green<br>Mixing/Mastering: Kafeen,
+                                            Damz, B.D.D, Jamie Dumas, Lón<br>Artwork: Peter "Skeet" Whelan</p>
+                                        <a href="https://a10sin.bandcamp.com/album/the-crettin-l-p-full-album"
+                                            target="_blank"><i class="fab fa-bandcamp fa-2x"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card-wrapper mx-auto">
+                            <div class="content">
+                                <div class="face-front">
+                                    <img src="assets/img/coca.jpg" class="img-responsive" alt="a10" />
+                                </div>
+                                <div class="face-back">
+                                    <div class="card-body">
+                                        <h2 class="artist-releases-song-title">Kushlawn Coca</h2>
+                                        <h4 class="artist-releases-title">DJ Green</h4>
+                                        <p class="artist-p">Vocals/Lyrics: A10Sín, Indecisive, Edgy V & GG
+                                            Carma, Jack Bashful, Shambles Bhoy, Lil Nath, Rusgrey, B-Noble, C4,
+                                            Salmon, Strange Boy, Animal, Shafto, Arcane Soakes, Upfront</p>
+                                        <a href="https://open.spotify.com/album/10HCcPppUfasUfYTJUlkAu"
+                                            target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card-wrapper mx-auto">
+                            <div class="content">
+                                <div class="face-front">
+                                    <img src="assets/img/aqua.jpg" class="img-responsive" alt="a10" />
+                                </div>
+                                <div class="face-back">
+                                    <div class="card-body">
+                                        <h2 class="artist-releases-song-title">Aquaman</h2>
+                                        <h4 class="artist-releases-title">Big Man Davey</h4>
+                                        <p class="artist-p">Released March 17, 2020<br>
+                                            Production: DJ Green, Damz Doherty, Kafeen, Cadence<br></p>
+                                        <a href="https://bigmandavey.bandcamp.com/album/aquaman"
+                                            target="_blank"><i class="fab fa-bandcamp fa-2x"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card-wrapper mx-auto">
+                            <div class="content">
+                                <div class="face-front">
+                                    <img src="assets/img/culchie.jpg" class="img-responsive" alt="a10" />
+                                </div>
+                                <div class="face-back">
+                                    <div class="card-body">
+                                        <h2 class="artist-releases-song-title">The Devil Was A Culchie</h2>
+                                        <h4 class="artist-releases-title">Field Literature</h4>
+                                        <p class="artist-p">Released March 8, 2020<br>
+                                            Vocals/lyrics: A10Sín, Trust, BigMan Davey & Amadán Druí<br>
+                                            Production: DJ Green<br>
+                                        </p>
+                                        <a href="https://open.spotify.com/album/1fcqoQacUJGqBLOxb7UYN3"
+                                            target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card-wrapper mx-auto">
+                            <div class="content">
+                                <div class="face-front">
+                                    <img src="assets/img/exc.jpg" class="img-responsive" alt="a10" />
+                                </div>
+                                <div class="face-back">
+                                    <div class="card-body">
+                                        <h2 class="artist-releases-song-title">R.R</h2>
+                                        <h4 class="artist-releases-title">Same D4ence</h4>
+                                        <p class="artist-p">R.R. or Real Rappers is just a freebie to give you a
+                                            taste of whats in store from the trio this year.<br>Production:
+                                            Psyjackbeats<br>Vocals: Hazey Haze, Size and MCB</p>
+                                        <a href="https://samed4ence.bandcamp.com/track/r-r" target="_blank"><i
+                                                class="fab fa-bandcamp fa-2x"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card-wrapper mx-auto">
+                            <div class="content">
+                                <div class="face-front">
+                                    <img src="assets/img/fg.jpg" class="img-responsive" alt="a10" />
+                                </div>
+                                <div class="face-back">
+                                    <div class="card-body">
+                                        <h2 class="artist-releases-song-title">Flood Ground</h2>
+                                        <h4 class="artist-releases-title">Same D4ence</h4>
+                                        <p class="artist-p">Released March 28, 2020<br>
+                                            Tracks 1 & 2 by Bigman Davey<br>
+                                            Tracks 3,4 & 5 by DJ Green<br>
+                                            Production: Derek O' Doherty<br>
+                                            Recorded @ DoxWorx<br></p>
+                                        <a href="https://samed4ence.bandcamp.com/album/flood-ground"
+                                            target="_blank"><i class="fab fa-bandcamp fa-2x"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card-wrapper mx-auto">
+                            <div class="content">
+                                <div class="face-front">
+                                    <img src="assets/img/aff.jpg" class="img-responsive" alt="a10" />
+                                </div>
+                                <div class="face-back">
+                                    <div class="card-body">
+                                        <h2 class="artist-releases-song-title">Affiliation</h2>
+                                        <h4 class="artist-releases-title">Same D4ence</h4>
+                                        <p class="artist-p">Released May 29, 2018<br>
+                                            Vocals/lyrics: SiZe, MCB & Hazey Haze<br>
+                                            Production: Big Man Davey<br>
+                                            Artwork: George Fitzgerald</p>
+                                        <a href="https://samed4ence.bandcamp.com/album/affiliation-part-1"
+                                            target="_blank"><i class="fab fa-bandcamp fa-2x"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card-wrapper mx-auto">
+                            <div class="content">
+                                <div class="face-front">
+                                    <img src="assets/img/fic.jpg" class="img-responsive" alt="a10" />
+                                </div>
+                                <div class="face-back">
+                                    <div class="card-body">
+                                        <h2 class="artist-releases-song-title">Stranger Than Fiction</h2>
+                                        <h4 class="artist-releases-title">Trust</h4>
+                                        <p class="artist-p">Released April 11, 2017<br>
+                                            Vocals/lyrics: Steo Skitz & Trust<br></p>
+                                        <a href="https://steoskitz.bandcamp.com/album/stranger-than-fiction"
+                                            target="_blank"><i class="fab fa-bandcamp fa-2x"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card-wrapper mx-auto">
+                            <div class="content">
+                                <div class="face-front">
+                                    <img src="assets/img/crettin.jpg" class="img-responsive" alt="a10" />
+                                </div>
+                                <div class="face-back">
+                                    <div class="card-body">
+                                        <h2 class="artist-releases-song-title">Common Rough LP</h2>
+                                        <h4 class="artist-releases-title">A10Sin</h4>
+                                        <p class="artist-p">Here we have the sequel to A10Sin's first album,
+                                            "The Crettin LP" which tells a tale of satanic gangsterism and
+                                            unruly drug abuse</p>
+                                        <a href="https://open.spotify.com/album/4Dzt2hKxVlMR2JHTpwrrPV"
+                                            target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+        </div>
+    </div>
+    <!--End of desktop rotating card carousel-->
+
+    <!--Start of mobile releases carousel, will be hidden for bootstrap's md breakpoint and above-->
+    <div class="carousel slide d-md-none" id="carousel4" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="card-wrapper mx-auto">
+                    <div class="content">
+                        <div class="face-front">
+                            <img src="assets/img/crettin.jpg" class="img-responsive" alt="a10" />
+                        </div>
+                        <div class="face-back">
+                            <div class="card-body">
+                                <h2 class="artist-releases-song-title">The Crettin LP</h2>
+                                <h4 class="artist-releases-title">A10Sin</h4>
+                                <p class="artist-p">Production: DJ Green<br>Mixing/Mastering: Kafeen, Damz,
+                                    B.D.D, Jamie Dumas, Lón<br>Artwork: Peter "Skeet" Whelan</p>
+                                <a href="https://a10sin.bandcamp.com/album/the-crettin-l-p-full-album"
+                                    target="_blank"><i class="fab fa-bandcamp fa-2x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card-wrapper mx-auto">
+                    <div class="content">
+                        <div class="face-front">
+                            <img src="assets/img/coca.jpg" class="img-responsive" alt="a10" />
+                        </div>
+                        <div class="face-back">
+                            <div class="card-body">
+                                <h2 class="artist-releases-song-title">Kushlawn Coca</h2>
+                                <h4 class="artist-releases-title">DJ Green</h4>
+                                <p class="artist-p">Vocals/Lyrics: A10Sín, Indecisive, Edgy V & GG Carma, Jack
+                                    Bashful, Shambles Bhoy, Lil Nath, Rusgrey, B-Noble, C4, Salmon, Strange Boy,
+                                    Animal, Shafto, Arcane Soakes, Upfront</p>
+                                <a href="https://open.spotify.com/album/10HCcPppUfasUfYTJUlkAu"
+                                    target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card-wrapper mx-auto">
+                    <div class="content">
+                        <div class="face-front">
+                            <img src="assets/img/aqua.jpg" class="img-responsive" alt="a10" />
+                        </div>
+                        <div class="face-back">
+                            <div class="card-body">
+                                <h2 class="artist-releases-song-title">Aquaman</h2>
+                                <h4 class="artist-releases-title">Big Man Davey</h4>
+                                <p class="artist-p">Released March 17, 2020<br>
+                                    Production: DJ Green, Damz Doherty, Kafeen, Cadence<br></p>
+                                <a href="https://bigmandavey.bandcamp.com/album/aquaman" target="_blank"><i
+                                        class="fab fa-bandcamp fa-2x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carousel4" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel4" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+<!--End of mobile rotating card carousel-->
+
 
 {% endblock %}

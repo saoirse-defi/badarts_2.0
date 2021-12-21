@@ -2,7 +2,7 @@ import uuid
 
 from django.db import models
 from django.db.models import Sum
-from farm2table import settings
+from badarts import settings
 
 from products.models import Product
 from profile.models import UserProfile

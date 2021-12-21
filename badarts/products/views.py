@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 from .filters import ProductFilter
 from .models import Product, Category
-from .forms import ProductForm
+#from .forms import ProductForm
 from profile.models import UserProfile
 
 # Custom Decorators
@@ -32,12 +32,10 @@ def all_products(request):
 
     if request.user.is_authenticated:
         current_user = UserProfile.objects.get(user=request.user)
-        current_wishlist = Wishlist.objects.all().filter(user=current_user)
 
         context = {
             'products': products,
             'product_filter': product_filter,
-            'current_wishlist': current_wishlist,
             'current_user': current_user,
         }
 
@@ -53,8 +51,6 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
-    wishlist_id = None
-
     try:
         current_user = UserProfile.objects.get(user=request.user)
     except Exception as e:
@@ -62,39 +58,10 @@ def product_detail(request, product_id):
         print(e)
 
     product = get_object_or_404(Product, pk=product_id)
-    store = get_object_or_404(Store, pk=product.seller_store.store_id)
 
-    if current_user is not None:
-        try:
-            current_wishlist = Wishlist.objects.all().filter(user=current_user)
-            for wish in current_wishlist:
-                if wish.product == product:
-                    wishlist_id = wish.wishlist_id
-        except Exception as e:
-            wishlist_id = None
-            print(e)
+    context = {
+        'current_user': current_user,
+        'product': product,
+        }
+    return render(request, 'products/product_detail.html', context)
 
-        if store.user == current_user:
-            context = {
-                'wishlist_id': wishlist_id,
-                'current_user': current_user,
-                'product': product,
-                'store': store,
-                }
-            return render(request, 'products/product_detail.html', context)
-        else:
-            context = {
-                'wishlist_id': wishlist_id,
-                'current_user': current_user,
-                'product': product,
-                'store': store,
-                }
-            return render(request,
-                          'products/product_detail_anon.html',
-                          context)
-    else:
-        context = {
-            'product': product,
-            'store': store,
-            }
-        return render(request, 'products/product_detail_anon.html', context)

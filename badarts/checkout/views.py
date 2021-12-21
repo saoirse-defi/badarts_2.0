@@ -6,9 +6,9 @@ from django.contrib import messages
 from django.conf import settings
 from products.models import Product
 from bag.contexts import bag_contents
-from .forms import OrderForm
+#from .forms import OrderForm
 from .models import Order, OrderLineItem
-from profile.forms import UserProfileForm
+#from profile.forms import UserProfileForm
 from profile.models import UserProfile
 
 import stripe
