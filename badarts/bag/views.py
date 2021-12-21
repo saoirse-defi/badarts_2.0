@@ -6,6 +6,7 @@ from django.shortcuts import (
     HttpResponse,
     get_object_or_404)
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from products.models import Product
 
@@ -18,6 +19,7 @@ def view_bag(request):
     return render(request, 'bag/bag.html')
 
 
+#@login_required()
 def add_to_bag(request, product_id):
     """ Add quantity of specified item to the user's shopping bag. """
 
@@ -59,7 +61,7 @@ def add_to_bag(request, product_id):
 
     request.session['bag'] = bag
 
-    return redirect(redirect_url)
+    return render(request, 'bag/bag.html')
 
 
 def adjust_bag(request, product_id):

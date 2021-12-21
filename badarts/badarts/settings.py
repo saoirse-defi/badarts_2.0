@@ -90,6 +90,8 @@ TEMPLATES = [
     },
 ]
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin
     'django.contrib.auth.backends.ModelBackend',
@@ -176,6 +178,7 @@ MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 SITE_ID = 2
 
+LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
 FREE_DELIVERY_THRESHOLD = 25
@@ -201,6 +204,6 @@ SOCIALACCOUNT_PROVIDERS = {
 
 # Stripe
 STRIPE_CURRENCY = 'eur'
-STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
-STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
+STRIPE_PUBLIC_KEY = 'pk_test_51JUBLoJiiZl6riemjloDASbxq8eXcDOPrvAe0Tbi9ng0uW4S9LIjwX6r44r4a0Qv0W7u3zea0dlD5akWTk7FvBDd00grgIGrUr'
+STRIPE_SECRET_KEY = 'sk_test_51JUBLoJiiZl6riemDFRe7fWLn30zGHnPhTr71v9nk1o8pXyiGPo5AiyC9JHaUhurlyNeorizwkGZ8RxPVsDw5hwF00IYWXXp4U'
 STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET')

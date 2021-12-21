@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.conf import settings
 from products.models import Product
 from bag.contexts import bag_contents
-#from .forms import OrderForm
+from .forms import OrderForm
 from .models import Order, OrderLineItem
 #from profile.forms import UserProfileForm
 from profile.models import UserProfile
@@ -38,18 +38,7 @@ def checkout(request):
 
     if request.method == 'POST':
         bag = request.session.get('bag', {})
-        form_data = {
-            'full_name': request.POST['full_name'],
-            'email': request.POST['email'],
-            'phone_number': request.POST['phone_number'],
-            'country': request.POST['country'],
-            'town': request.POST['town'],
-            'county': request.POST['county'],
-            'street_address1': request.POST['street_address1'],
-            'street_address2': request.POST['street_address2'],
-            'postcode': request.POST['postcode']
-        }
-        order_form = OrderForm(form_data)
+        order_form = OrderForm(request.POST, request.FILES)
         if order_form.is_valid():
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
@@ -61,7 +50,7 @@ def checkout(request):
                     product = Product.objects.get(sku=item_id)
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
-                            order=order,
+                            order_number=order,
                             product=product,
                             quantity=item_data
                         )
@@ -112,13 +101,13 @@ def checkout(request):
                 order_form = OrderForm(initial={
                     'full_name': profile.user.get_full_name(),
                     'email': profile.user.email,
-                    'phone_number': profile.default_phone_number,
-                    'country': profile.default_country,
-                    'postcode': profile.default_postcode,
-                    'town': profile.default_town,
-                    'street_address1': profile.default_street_address1,
-                    'street_address2': profile.default_street_address2,
-                    'county': profile.default_county,
+                    'phone_number': profile.phone_number,
+                    'country': profile.country,
+                    'postcode': profile.postcode,
+                    'town': profile.town,
+                    'street_address1': profile.street_address1,
+                    'street_address2': profile.street_address2,
+                    'county': profile.county,
                 })
             except UserProfile.DoesNotExist:
                 order_form = OrderForm()
