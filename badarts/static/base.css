@@ -89,7 +89,7 @@ nav{
 }
 
 .modal-content{
-    background-color: orangered;
+    background-color: #fefefe;
 }
 
 #flyoutModal{
@@ -144,7 +144,7 @@ nav{
   
   .modal-header {
     border-radius: 0;
-    background-color: orangered;
+    background-color: #fefefe;
     border-color: black;
     align-items: center;
     padding: 1.2rem;
@@ -158,6 +158,13 @@ nav{
   }
 
   /* End of Flyout Modal styling */
+
+  .modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   
   .modal-backdrop {
     background-color: black;

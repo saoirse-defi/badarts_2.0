@@ -5,6 +5,7 @@ from django.contrib.auth import (
 
 from .models import UserProfile, County
 from localflavor.ie.forms import EircodeField
+from django_countries.fields import CountryField
 
 
 User = get_user_model()
@@ -23,7 +24,7 @@ class UserProfileForm(forms.ModelForm):
 
         super().__init__(*args, **kwargs)
 
-        self.fields['default_county'] = forms.ModelChoiceField(
+        self.fields['county'] = forms.ModelChoiceField(
                                         queryset=County.objects.order_by('name'),
                                         initial=0)
-        self.fields['default_postcode'] = EircodeField()
+        self.fields['postcode'] = EircodeField(required=False)

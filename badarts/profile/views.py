@@ -18,6 +18,7 @@ def my_profile(request):
 
     template = 'profile/my_profile.html'
     context = {
+        'form': form,
         'profile': profile,
         'orders': orders,
     }
@@ -34,14 +35,14 @@ def edit_profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Profile updated successfully.")
-            return redirect(reverse('view_profile'))
+            return redirect(reverse('my_profile'))
         else:
             messages.error(request, 'Please review profile details as '
                            'there appears to be an error.')
     else:
         form = UserProfileForm(instance=profile)
 
-    template = "profile/profile.html"
+    template = "profile/my_profile.html"
     context = {
         'form': form,
         'profile': profile,

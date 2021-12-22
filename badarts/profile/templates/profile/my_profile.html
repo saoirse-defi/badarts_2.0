@@ -12,8 +12,25 @@
         <div class="row">
             <hr>
             <h4 class="center-align">{{profile.user}}'s Profile</h4>
-            <button type="button" class="btn btn-dark" id="edit-profile-button" data-toggle="modal" data-target="#edit-personal-details">Edit Profile</button>
+            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#edit-personal-details">Edit Profile</button>
             <hr>
+            <div id="edit-personal-details" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <form action="{% url 'my_profile' %}" method="POST" id="profile-update-form">
+                        <div class="modal-content">
+                            <h5 class="center-align">Edit Profile</h5>
+                            <p class="center-align">These delivery details will be used in your next order!</p>
+                            {% csrf_token %}
+                            {% for field in form %}
+                                {{ field | as_crispy_field }}
+                            {% endfor %}
+                            <div class="modal-footer">
+                                <button class="btn btn-dark" type="submit">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="col s12">
@@ -67,23 +84,7 @@
             <p>Town: {{ profile.town }}</p>
             <p>County: {{ profile.county}}</p>
             <p>Eircode: {{ profile.postcode }}</p>
-        </div>
-        <div id="edit-personal-details" class="modal fade" role="dialog">
-            <div class="modal-content">
-                <form action="{% url 'edit_profile' %}" method="POST" id="profile-update-form">
-                    <div class="modal-content">
-                        <h5 class="center-align">Edit Profile</h5>
-                        <p class="center-align">These delivery details will be used in your next order!</p>
-                        {% csrf_token %}
-                        {% for field in form %}
-                            {{ field | as_crispy_field }}
-                        {% endfor %}
-                        <div class="modal-footer">
-                            <button class="btn btn-dark" type="submit">Save</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+            <p>Country: {{ profile.country }}</p>
         </div>
     </div>
 </div>
