@@ -12,23 +12,7 @@ from django.contrib.auth.models import User
 @login_required()
 def my_profile(request):
     profile = get_object_or_404(UserProfile, user=request.user)
-    form = UserProfileForm(instance=profile)
-
     orders = Order.objects.all().filter(user_profile=profile)
-
-    template = 'profile/my_profile.html'
-    context = {
-        'form': form,
-        'profile': profile,
-        'orders': orders,
-    }
-
-    return render(request, template, context)
-
-
-@login_required
-def edit_profile(request):
-    profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
@@ -42,30 +26,12 @@ def edit_profile(request):
     else:
         form = UserProfileForm(instance=profile)
 
-    template = "profile/my_profile.html"
+    template = 'profile/my_profile.html'
     context = {
         'form': form,
         'profile': profile,
+        'orders': orders,
     }
 
     return render(request, template, context)
 
-
-def login(request):
-    template = 'profile/login.html'
-
-    context = {
-
-    }
-
-    return render(request, template, context)
-
-
-def signup(request):
-    template = 'profile/signup.html'
-
-    context = {
-
-    }
-
-    return render(request, template, context)
