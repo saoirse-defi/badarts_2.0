@@ -23,7 +23,7 @@ def superuser_required(func):
 
 # Product Views
 
-def all_products(request):
+def products(request):
     """ A view to handle all products """
 
     products = Product.objects.all()
