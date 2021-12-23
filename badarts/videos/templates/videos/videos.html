@@ -12,9 +12,11 @@
 <!--Start of fancybox gallery-->
 <div class="container" id="video-wrapper">
     {% for video in videos %}
-    <div class="grid-item">
-        <a data-fancybox="gallery" href="{{ video.youtube_url }}" data-caption="{{ video.data_caption }}" target="_blank"><img src="{{ video.thumbnail_url }}" style="width:250px;height:250px;"/></a>
-    </div>
+        {% if video.active %}
+            <div class="grid-item">
+                <a data-fancybox="gallery" href="{{ video.youtube_url }}" data-caption="{{ video.data_caption }}" target="_blank"><img src="{{ video.thumbnail_url }}" style="width:250px;height:250px;"/></a>
+            </div>
+        {% endif %}
     {% endfor %}
 </div>
 <!--End of Fancybox gallery-->

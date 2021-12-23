@@ -11,6 +11,7 @@ class Video(models.Model):
     youtube_url = models.CharField(max_length=254)
     data_caption = models.CharField(max_length=254)
     description = models.CharField(max_length=254)
+    active = models.BooleanField(default=True, null=False, blank=False)
 
     def __str__(self):
         return str(self.name)
