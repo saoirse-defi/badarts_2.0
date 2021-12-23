@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h3 class="text-center" id="contact-h3">Contact Us</h3>
+</div>
+<div class="container-fluid" id="contact-details">
+    <div class="row">
+        <div class="col-sm-7">
+            <div id="map"> <!--Google map element-->
+            </div>
+        </div>
+    <!--Start of contact form-->
+        <div class="col-sm-5" id="contact-f">
+            <p id="contact-text"></p>
+            <form id="contact-form" name="contact-form" action="{% url 'contact' %}" method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+                    {{ field | as_crispy_field }}
+                {% endfor %}
+            </form>
+            <div class="text-center text-md-left">
+                <button class="btn btn-dark" id="contact-button" type="submit" form="contact-form">Send</button>
+            </div>
+            <div class="status"></div>
+        </div>
+    </div>
+</div>
+<!--End of contact form-->
+{% endblock %}
+
+{% block post_js %}
+<script>
+    function initMap() { 
+        const dIsland = { lat: 52.675525, lng: -8.626681 }; //starting co-ordinates for Google map element
+        var map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 14,
+            center: dIsland,
+            mapId: "1c5ba11b36cd67b9"
+        });
+
+        const disland = //content for Google map info window
+            '<div id="disland">' +
+            '<h3 id="firstHeading" class="firstHeading">D\'Island Field</h3>' +
+            '<div id="bodyContent">' +
+            "<p>St. Mary's Park is one of the more impoverished areas in Limerick city and has suffered from high crime rates including gun and knife violence." +
+            "</div>" +
+            "</div>";
+
+        const infowindow = new google.maps.InfoWindow({
+            content: disland,
+            maxWidth: 250
+        });
+
+        var marker = new google.maps.Marker({
+            position: dIsland,
+            map: map,
+            animation: google.maps.Animation.DROP
+        });
+
+        marker.addListener("click", () => { //opens info window content when user clicks on pin
+            infowindow.open(map, marker);
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMnlvVbjHUS7caLo2H_Kwm3cLPgp_tF1s&map_ids=1c5ba11b36cd67b9&callback=initMap"></script>
+{% endblock %}
