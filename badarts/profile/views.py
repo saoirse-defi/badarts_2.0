@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
+from homepage.models import Message
 from .models import UserProfile
 from .forms import UserProfileForm
 from checkout.models import Order
@@ -13,6 +14,7 @@ from django.contrib.auth.models import User
 def my_profile(request):
     profile = get_object_or_404(UserProfile, user=request.user)
     orders = Order.objects.all().filter(user_profile=profile)
+    admin_messages = Message.objects.all()
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
@@ -31,6 +33,7 @@ def my_profile(request):
         'form': form,
         'profile': profile,
         'orders': orders,
+        'admin_messages': admin_messages,
     }
 
     return render(request, template, context)
