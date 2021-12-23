@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block content %}
+
+<!--Plugin taken from https://fancyapps.com/fancybox/3/-->
+<h2 class="text-center" id="video-h2">Video Releases</h2>
+<!--Start of fancybox gallery-->
+<div class="container" id="video-wrapper">
+    {% for video in videos %}
+    <div class="grid-item">
+        <a data-fancybox="gallery" href="{{ video.youtube_url }}" data-caption="{{ video.data_caption }}" target="_blank"><img src="{{ video.thumbnail_url }}" style="width:250px;height:250px;"/></a>
+    </div>
+    {% endfor %}
+</div>
+<!--End of Fancybox gallery-->
+
+{% endblock %}

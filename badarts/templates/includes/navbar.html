@@ -15,7 +15,7 @@
                     <a class="nav-link" href="{% url 'my_profile' %}">Profile</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="videos.html">Videos</a>
+                    <a class="nav-link" href="{% url 'videos' %}">Videos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'products' %}">Shop</a>
@@ -28,7 +28,7 @@
                 </li>
             {% else %}
                 <li class="nav-item active">
-                    <a class="nav-link" href="videos.html">Videos</a>
+                    <a class="nav-link" href="{% url 'videos' %}">Videos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="shop.html">Shop</a>

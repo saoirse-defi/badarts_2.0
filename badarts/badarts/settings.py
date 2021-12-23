@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'static',
+    'videos',
 
     'allauth',
     'allauth.account',
