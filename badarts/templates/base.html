@@ -43,11 +43,11 @@
 
 </head>
 <body>
-    <header class="container"></header>
-
-    {% block page_header %}
-        {% include 'includes/navbar.html' %}
-    {% endblock %}
+    <header class="container">
+        {% block page_header %}
+            {% include 'includes/navbar.html' %}
+        {% endblock %}
+    </header>
 
     <div class="container">
         {% block content %}

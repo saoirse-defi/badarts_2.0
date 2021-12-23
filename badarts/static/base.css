@@ -180,6 +180,11 @@ nav{
     max-width: 500px;
   }
 
+.checkout-image img{
+    width: 50%;
+    height: auto;
+}
+
 .mailing{
     color: black;
 }
