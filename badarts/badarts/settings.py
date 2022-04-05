@@ -42,10 +42,7 @@ INSTALLED_APPS = [
 
     'badarts',
     'homepage',
-    'profile',
     'products',
-    'bag',
-    'checkout',
     'static',
     'videos',
 
