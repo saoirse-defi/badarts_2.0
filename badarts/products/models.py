@@ -27,8 +27,6 @@ class Product(models.Model):
                                  on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
     description = models.TextField()
-    organic = models.BooleanField(default=False, null=False, blank=False)
-    has_sizes = models.BooleanField(default=True, null=False, blank=False)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(max_digits=6, decimal_places=2,
                                  null=True, blank=True)
