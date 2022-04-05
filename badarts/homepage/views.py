@@ -1,13 +1,20 @@
 from django.shortcuts import render, redirect, reverse
-from .models import Message
 from .forms import MessageForm
+from .models import Artist, Release, Event, Message
 
 
 def index(request):
+    artists = Artist.objects.all()
+    releases = Release.objects.all()
+    events = Event.objects.all()
+    messages = Message.objects.all()
+
     template = 'homepage/index.html'
-
     context = {
-
+        'artists': artists,
+        'releases': releases,
+        'events': events,
+        'messages': messages
     }
 
     return render(request, template, context)
