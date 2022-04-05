@@ -7,33 +7,19 @@
 <div class="container-fluid" id="carousel-slide">
     <div id="carousel-main" class="carousel slide" data-ride="carousel" data-interval="15000">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://ik.imagekit.io/iscs6ll976z/ab.jpg" class="d-block w-100" id="r1" alt="1" />
-                <div class="carousel-caption">
-                    <div class="container jumbo-text">
-                        <h3 class="display-4">Frequent + Fresh Music</h3>
-                        <p class="lead">An independent hip hop label based in<br>Limerick City.</p>
+            {% for release in releases %}
+                {% if release.carousel_active %}
+                <div class="carousel-item active">
+                    <img src="{{release.image.url}}" class="d-block w-100" id="r3" alt="1">
+                    <div class="carousel-caption">
+                        <div class="container jumbo-text">
+                            <h3 class="display-4">Frequent + Fresh Music</h3>
+                            <p class="lead">An independent hip hop label based in<br>Limerick City.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://ik.imagekit.io/iscs6ll976z/bmn.jpg" class="d-block w-100" id="r3" alt="1">
-                <div class="carousel-caption">
-                    <div class="container jumbo-text">
-                        <h3 class="display-4">Frequent + Fresh Music</h3>
-                        <p class="lead">An independent hip hop label based in<br>Limerick City.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://ik.imagekit.io/iscs6ll976z/mbn.jpg" class="d-block w-100" id="r4" alt="1">
-                <div class="carousel-caption">
-                    <div class="container jumbo-text">
-                        <h3 class="display-4">Frequent + Fresh Music</h3>
-                        <p class="lead">An independent hip hop label based in<br>Limerick City.</p>
-                    </div>
-                </div>
-            </div>
+                {% endif %}
+            {% endfor %}
             <button class="carousel-control-prev" type="button" data-bs-target="#carousel-main" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
