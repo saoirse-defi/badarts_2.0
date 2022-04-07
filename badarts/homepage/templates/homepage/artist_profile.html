@@ -16,9 +16,12 @@
             <h2>{{ artist.name }}</h2>
         </div>
         <div class="row">
-            <a class="fa fa-youtube" href="{{ artist.youtube_url }}" target="_blank"></a>
-            <a class="fa fa-instagram" href="{{ artist.instagram_url }}" target="_blank"></a>
-            <a class="fa fa-bandcamp" href="{{ artist.bandcamp_url }}" target="_blank"></a>
+            <ul class="social-icons">
+                <li><a class="instagram" href="{{ artist.instagram_url }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                <li><a class="spotify" href="{{ artist.spotify_url }}" target="_blank"><i class="fa fa-spotify"></i></a></li>
+                <li><a class="bandcamp" href="{{ artist.bandcamp_url }}" target="_blank"><i class="fa fa-bandcamp"></i></a></li>
+                <li><a class="youtube" href="{{ artist.youtube_url }}" target="_blank"><i class="fa fa-youtube"></i></a></li>   
+              </ul>
         </div>
         <div class="row">
             <p>{{ artist.bio }}</p>
