@@ -10,7 +10,7 @@ class Video(models.Model):
                           editable=False)
     name = models.CharField(max_length=254)
     artist = models.ForeignKey(Artist,
-                               null=False,
+                               null=True,
                                blank=False,
                                default=None,
                                on_delete=models.CASCADE)

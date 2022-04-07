@@ -7,6 +7,7 @@ class Artist(models.Model):
                           default=uuid.uuid4,
                           editable=False)
     name = models.CharField(max_length=254)
+    bio = models.TextField(max_length=1024, default="")
     youtube_url = models.URLField(max_length=1024, null=True, blank=True)
     spotify_url = models.URLField(max_length=1024, null=True, blank=True)
     bandcamp_url = models.URLField(max_length=1024, null=True, blank=True)
@@ -24,7 +25,7 @@ class Release(models.Model):
                           editable=False)
     title = models.CharField(max_length=254)
     artist = models.ForeignKey(Artist,
-                               null=False,
+                               null=True,
                                blank=False,
                                default=None,
                                on_delete=models.CASCADE)
