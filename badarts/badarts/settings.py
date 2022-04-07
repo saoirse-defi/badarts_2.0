@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-i4vo0jc1^uwv3wum%h)5!4srjon(-n2t60h)#!kex4fg_88tgm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'nameofapp.herokuapp.com']
 
 
 # Application definition
@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django_bootstrap5',
     'django_countries',
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'badarts.urls'
@@ -105,12 +107,17 @@ WSGI_APPLICATION = 'badarts.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 # Password validation
@@ -180,13 +187,6 @@ SITE_ID = 2
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'admin@badartsentertainment.com'
 
-LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/'
-
-FREE_DELIVERY_THRESHOLD = 25
-
-STANDARD_DELIVERY_PERCENTAGE = 10
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -203,9 +203,3 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
-
-# Stripe
-STRIPE_CURRENCY = 'eur'
-STRIPE_PUBLIC_KEY = 'pk_test_51JUBLoJiiZl6riemjloDASbxq8eXcDOPrvAe0Tbi9ng0uW4S9LIjwX6r44r4a0Qv0W7u3zea0dlD5akWTk7FvBDd00grgIGrUr'
-STRIPE_SECRET_KEY = 'sk_test_51JUBLoJiiZl6riemDFRe7fWLn30zGHnPhTr71v9nk1o8pXyiGPo5AiyC9JHaUhurlyNeorizwkGZ8RxPVsDw5hwF00IYWXXp4U'
-STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET')
