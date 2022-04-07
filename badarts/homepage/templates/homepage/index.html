@@ -35,6 +35,7 @@
 
 <div class="grid-container s12" id="artist-grid-container">
     {% for artist in artists %}
+        {% if artist.active %}
         <div class="artist-card center-align">
             <div class="card-header">
                 {% if artist.image_url %}
@@ -47,6 +48,7 @@
                 <h4>{{ artist.name }}</h4>
             </div>
         </div>
+        {% endif %}
     {% endfor %}
 </div>
 

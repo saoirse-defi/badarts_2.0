@@ -37,6 +37,28 @@ def contact(request):
     return render(request, template, context)
 
 
+def events(request):
+    event_list = Event.objects.all()
+
+    template = 'homepage/events.html'
+    context = {
+        'event_list': event_list,
+    }
+
+    return render(request, template, context)
+
+
+def event_page(request, event_id):
+    event = get_object_or_404(Event, pk=event_id)
+
+    template = 'homepage/event_page.html'
+    context = {
+        'event': event,
+    }
+
+    return render(request, template, context)
+
+
 def artist_profile(request, artist_id):
     artist = get_object_or_404(Artist, pk=artist_id)
 
