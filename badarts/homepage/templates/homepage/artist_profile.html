@@ -16,10 +16,13 @@
             <h2>{{ artist.name }}</h2>
         </div>
         <div class="row">
-            <h3>Introduction:</h3>
+            <a class="fa fa-youtube" href="{{ artist.youtube_url }}" target="_blank"></a>
+            <a class="fa fa-instagram" href="{{ artist.instagram_url }}" target="_blank"></a>
+            <a class="fa fa-bandcamp" href="{{ artist.bandcamp_url }}" target="_blank"></a>
+        </div>
+        <div class="row">
             <p>{{ artist.bio }}</p>
         </div>
-        <div class="row"></div>
     </div>
 </div>
 

@@ -9,6 +9,7 @@ class Artist(models.Model):
     name = models.CharField(max_length=254)
     bio = models.TextField(max_length=1024, default="")
     youtube_url = models.URLField(max_length=1024, null=True, blank=True)
+    instgram_url = models.URLField(max_length=1024, null=True, blank=True)
     spotify_url = models.URLField(max_length=1024, null=True, blank=True)
     bandcamp_url = models.URLField(max_length=1024, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
