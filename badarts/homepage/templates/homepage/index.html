@@ -323,7 +323,9 @@
         <div class="artist-card center-align">
             <div class="card-header">
                 {% if artist.image_url %}
+                <a href="{% url 'artist_profile' artist.id %}">
                     <img class="card-img responsive" src="{{ artist.image_url }}" alt="{{ artist.name }}">
+                </a>
                 {% endif %}
             </div>
             <div class="card-body">

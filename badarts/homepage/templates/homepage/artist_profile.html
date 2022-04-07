@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-6">
+        <img id="artist-profile-image" src="{{ artist.image_url }}" alt="{{ artist.name }}"/>
+    </div>
+    <div class="col-6">
+        <div class="row">
+            <h2>{{ artist.name }}</h2>
+        </div>
+        <div class="row">
+            <h3>Introduction:</h3>
+            <p>{{ artist.bio }}</p>
+        </div>
+        <div class="row"></div>
+    </div>
+</div>
+
+{% endblock %}

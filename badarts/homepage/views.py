@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .forms import MessageForm
 from .models import Artist, Release, Event, Message
 
@@ -32,6 +32,17 @@ def contact(request):
     template = 'homepage/contact.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+def artist_profile(request, artist_id):
+    artist = get_object_or_404(Artist, pk=artist_id)
+
+    template = 'homepage/artist_profile.html'
+    context = {
+        'artist': artist,
     }
 
     return render(request, template, context)

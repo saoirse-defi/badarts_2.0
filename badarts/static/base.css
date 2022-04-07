@@ -70,7 +70,7 @@ nav{
 
 .navbar-img{
     width: 100%;
-    height: 100px;
+    height: 95px;
 }
 
 #other-items{
@@ -587,6 +587,11 @@ footer{
 
 .artist-h3{
     font-size: 2.75rem;
+}
+
+#artist-profile-image{
+    width: 100%;
+    height: auto;
 }
 
 .card-img img{
