@@ -68,3 +68,11 @@ def artist_profile(request, artist_id):
     }
 
     return render(request, template, context)
+
+
+def recording(request):
+
+    template = 'homepage/recording.html'
+    context = {}
+
+    return render(request, template, context)

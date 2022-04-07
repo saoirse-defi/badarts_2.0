@@ -1,24 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!--Start of parent container-->
-<div class="container-fluid shop-container">
-    <div class="h2-box">
-        <h2 class="title-h2 text-center">Physical Media</h2>
-    </div>
-    <!--Start of physical media container-->
-    <div class="merch-gallery" id="merch-cd">
-        {% for product in products %}
+<h2>Enquire to purchase any of the items below</h2>
+<div class="grid-container" id="merch-container">
+    {% for product in products %}
+        {% if product.active %}
         <div class="merch">
             <img class="img-responsive merch-img" src="{{ product.image_url }}" alt="merch1"/>
             <a class="merch-text" href="{% url 'product_detail' product.sku %}">
                 <p>{{ product.name }}</p>
+                <p>€{{ product.price }}</p>
             </a>
         </div>
-        {% endfor %}
-    </div>
-    <!--End of physical media container-->
+        {% endif %}
+    {% endfor %}
 </div>
-<!--End of parent container-->
 
 {% endblock %}
