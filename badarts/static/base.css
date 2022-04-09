@@ -29,7 +29,6 @@ p{
 nav{
     background-color: black;
     height: 100px;
-    border-bottom: 1px solid orangered;
     z-index: 9;
 }
 
@@ -508,6 +507,10 @@ footer{
 .card{
     background-color: black;
     color: orangered;
+}
+
+.artist-card{
+
 }
 
 .artist-releases-song-title{

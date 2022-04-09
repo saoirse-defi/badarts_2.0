@@ -24,7 +24,8 @@ class Release(models.Model):
     id = models.UUIDField(primary_key=True,
                           default=uuid.uuid4,
                           editable=False)
-    title = models.CharField(max_length=254)
+    title = models.CharField(max_length=254, null=True, blank=True)
+    blurb = models.CharField(max_length=254, null=True, blank=True)
     artist = models.ForeignKey(Artist,
                                null=True,
                                blank=False,

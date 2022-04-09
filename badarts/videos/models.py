@@ -9,16 +9,16 @@ class Video(models.Model):
                           default=uuid.uuid4,
                           editable=False)
     name = models.CharField(max_length=254)
-    artist = models.ForeignKey(Artist,
-                               null=True,
-                               blank=False,
-                               default=None,
-                               on_delete=models.CASCADE)
-    thumbnail_url = models.CharField(max_length=254)
+    artists = models.ManyToManyField(Artist)
+    thumbnail_url = models.CharField(max_length=254, null=True, blank=True)
     youtube_url = models.CharField(max_length=254)
-    data_caption = models.CharField(max_length=254)
-    description = models.CharField(max_length=254)
+    youtube_id = models.CharField(max_length=254, null=True, blank=True)
+    data_caption = models.CharField(max_length=254, null=True, blank=True)
+    description = models.CharField(max_length=254, null=True, blank=True)
     active = models.BooleanField(default=True, null=False, blank=False)
 
     def __str__(self):
         return str(self.name)
+    
+    def display_performer_names(self):
+        return ', '.join([performer.name for performer in self.artists.all()])

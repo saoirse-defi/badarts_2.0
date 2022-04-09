@@ -6,19 +6,14 @@
 {% endblock %}
 
 {% block content %}
-
-<!--Plugin taken from https://fancyapps.com/fancybox/3/-->
 <h2 class="text-center" id="video-h2">Video Releases</h2>
-<!--Start of fancybox gallery-->
-<div class="container" id="video-wrapper">
+<div class="grid-container" id="video-grid-container">
     {% for video in videos %}
         {% if video.active %}
             <div class="grid-item">
-                <a data-fancybox="gallery" href="{{ video.youtube_url }}" data-caption="{{ video.data_caption }}" target="_blank"><img src="{{ video.thumbnail_url }}" style="width:250px;height:250px;"/></a>
+                <iframe src="https://www.youtube.com/embed/{{ video.youtube_id }}" title="{{ video.name }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         {% endif %}
     {% endfor %}
 </div>
-<!--End of Fancybox gallery-->
-
 {% endblock %}

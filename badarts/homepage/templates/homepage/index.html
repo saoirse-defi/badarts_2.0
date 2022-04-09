@@ -10,11 +10,13 @@
             {% for release in releases %}
                 {% if release.carousel_active %}
                 <div class="carousel-item active">
-                    <img src="{{release.image_url}}" class="d-block w-100" id="r3" alt="1">
+                    <img src="{{ release.image_url }}" class="d-block w-100" id="r3" alt="1">
                     <div class="carousel-caption">
                         <div class="container jumbo-text">
-                            <h3 class="display-4">Frequent + Fresh Music</h3>
-                            <p class="lead">An independent hip hop label based in<br>Limerick City.</p>
+                            <h3 class="display-4">{{ release.title }}</h3>
+                            {% if release.blurb is not None %}
+                                <p class="lead">{{ release.blurb }}</p>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -33,7 +35,7 @@
 </div>
 <!--End of main carousel-->
 
-<div class="grid-container s12" id="artist-grid-container">
+<div class="grid-container" id="artist-grid-container">
     {% for artist in artists %}
         {% if artist.active %}
         <div class="artist-card center-align">
