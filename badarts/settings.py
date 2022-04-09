@@ -27,7 +27,9 @@ SECRET_KEY = 'django-insecure-i4vo0jc1^uwv3wum%h)5!4srjon(-n2t60h)#!kex4fg_88tgm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'badarts.herokuapp.com', '5000-saoirsedefi-badarts20-0pqyq1qqwyp.ws-eu39.gitpod.io']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'badarts.herokuapp.com',
+                 '5000-saoirsedefi-badarts20-0pqyq1qqwyp.ws-eu39.gitpod.io',
+                 'www.badartsentertainment.com']
 
 # Application definition
 
