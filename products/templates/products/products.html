@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Enquire to purchase any of the items below</h2>
+<div class="grid-container" id="merch-container">
+    {% for product in products %}
+        {% if product.active %}
+        <div class="merch">
+            <img class="img-responsive merch-img" src="{{ product.image_url }}" alt="merch1"/>
+            <a class="merch-text" href="{% url 'product_detail' product.sku %}">
+                <p>{{ product.name }}</p>
+                <p>€{{ product.price }}</p>
+            </a>
+        </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}
