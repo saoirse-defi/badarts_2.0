@@ -8,24 +8,13 @@
 {% block content %}
 
 <div class="row">
-    <div class="col-8">
+    <a href="{{ event.eventbrite_url }}" target="_blank">
         {% if event.image_url %}
             <img class="card-img responsive" src="{{ event.image_url }}" alt="{{ event.name }}">
         {% else %}
             <img class="card-img responsive" src="https://ik.imagekit.io/iscs6ll976z/gigs/wfsd_WQese8SPZ?ik-sdk-version=javascript-1.4.3&updatedAt=1649335299966" alt="{{ event.name }}">
         {% endif %}
-    </div>
-    <div class="col-4">
-        <div class="row">
-            <h2>{{ event.name }}</h2>
-            <h3>{{ event.venue }}</h3>
-            <h3>{{ event.date }} @ {{ event.time }}</h3>
-            <p>{{ event.display_performer_names }}</p>
-        </div>
-        <div class="row">
-            <a href="{{ event.eventbrite_url }}" target="_blank">Purchase tickets here via EventBrite</a>
-        </div>
-    </div>
+    </a>
 </div>
 
 {% endblock %}
