@@ -1,1 +1,1 @@
-web: gunicorn badarts.badarts.wsgi
+web: gunicorn badarts.wsgi
