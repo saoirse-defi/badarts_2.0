@@ -20,7 +20,7 @@ class Artist(models.Model):
         return str(self.name)
 
     def format_bio(self):
-        return str(self.bio.replace('.', '.\n'))
+        return str(self.bio.replace('.', '.<br>'))
 
 
 class Release(models.Model):
