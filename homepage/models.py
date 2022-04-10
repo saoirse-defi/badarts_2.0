@@ -19,6 +19,9 @@ class Artist(models.Model):
     def __str__(self):
         return str(self.name)
 
+    def format_bio(self):
+        return str(self.bio.replace('.', '.\n'))
+
 
 class Release(models.Model):
     id = models.UUIDField(primary_key=True,
