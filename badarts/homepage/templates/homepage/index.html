@@ -4,12 +4,20 @@
 {% block content %}
 
 <!--Start of main carousel-->
-<div class="container-fluid" id="carousel-slide">
-    <div id="carousel-main" class="carousel slide" data-ride="carousel" data-interval="15000">
+    <div class="carousel slide" id="carousel-main" data-ride="carousel" data-interval="3000">
         <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://ik.imagekit.io/iscs6ll976z/artists/thjy_DwAWV3Sew?ik-sdk-version=javascript-1.4.3&updatedAt=1649338317312" class="d-block w-100" id="r3" alt="1">
+                <div class="carousel-caption">
+                    <div class="container jumbo-text">
+                        <h3 class="display-4">Bad Arts Crew</h3>
+                            <p class="lead">Moyross, Limerick</p>
+                    </div>
+                </div>
+            </div>
             {% for release in releases %}
                 {% if release.carousel_active %}
-                <div class="carousel-item active">
+                <div class="carousel-item" id="{{ release.title }}">
                     <img src="{{ release.image_url }}" class="d-block w-100" id="r3" alt="1">
                     <div class="carousel-caption">
                         <div class="container jumbo-text">
@@ -22,17 +30,8 @@
                 </div>
                 {% endif %}
             {% endfor %}
-            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-main" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel-main" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
         </div>
     </div>
-</div>
 <!--End of main carousel-->
 
 <div class="grid-container" id="artist-grid-container">

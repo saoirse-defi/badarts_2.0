@@ -12,6 +12,8 @@ body{
     font-family: "Kanit", sans-serif;
 }
 
+
+
 h1, h2, h3, h4, h5, h6{
     font-family: "Kanit", sans-serif;
     color: orangered;
@@ -443,7 +445,7 @@ footer{
 #carousel-main .carousel-control-next-icon{
         position: relative;
         top: 50px;
-    }
+}
 
 .jumbo-text{
     background-color: rgba(0,0,0,0.8);
@@ -509,8 +511,19 @@ footer{
     color: orangered;
 }
 
-.artist-card{
+.truncate{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 8;
+}
 
+.truncate-btn{
+    width: 20%;
+    background-color: orangered;
+    border-radius: 5%;
+    max-width: 100px;
 }
 
 .artist-releases-song-title{

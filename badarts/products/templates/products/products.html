@@ -10,6 +10,9 @@
             <a class="merch-text" href="{% url 'product_detail' product.sku %}">
                 <p>{{ product.name }}</p>
                 <p>€{{ product.price }}</p>
+                {% if not product.in_stock %}
+                    <p>CURRENTLY OUT OF STOCK</p>
+                {% endif %}
             </a>
         </div>
         {% endif %}
