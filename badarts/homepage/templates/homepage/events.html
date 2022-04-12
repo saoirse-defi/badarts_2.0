@@ -13,7 +13,7 @@
     <div class="grid-container" id="event-grid-container">
         {% for event in event_list %}
             {% if not event.expired %}
-            <a class="event-item" target="_blank" href="{{ event.eventbrite_url }}">
+            <a class="event-item" target="_blank" href="{% if event.eventbrite_url %}{{ event.eventbrite_url }}{% else %}{% endif %}">
                 {% if event.image_url %}
                     <img class="card-img responsive" src="{{ event.image_url }}" alt="{{ event.name }}">
                 {% else %}

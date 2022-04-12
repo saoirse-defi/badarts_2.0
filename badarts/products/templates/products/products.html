@@ -2,17 +2,31 @@
 {% block content %}
 
 <h2>Enquire to purchase any of the items below</h2>
-<div class="grid-container" id="merch-container">
+<h3>Items in stock</h3>
+<div class="grid-container" id="instock-merch-container">
     {% for product in products %}
-        {% if product.active %}
+        {% if product.in_stock %}
         <div class="merch">
             <img class="img-responsive merch-img" src="{{ product.image_url }}" alt="merch1"/>
             <a class="merch-text" href="{% url 'product_detail' product.sku %}">
                 <p>{{ product.name }}</p>
                 <p>€{{ product.price }}</p>
-                {% if not product.in_stock %}
-                    <p>CURRENTLY OUT OF STOCK</p>
-                {% endif %}
+            </a>
+        </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<h3>Back in stock soon</h3>
+<div class="grid-container" id="outstock-merch-container">
+    {% for product in products %}
+        {% if not product.in_stock %}
+        <div class="merch">
+            <img class="img-responsive merch-img" src="{{ product.image_url }}" alt="merch1"/>
+            <a class="merch-text" href="{% url 'product_detail' product.sku %}">
+                <p>{{ product.name }}</p>
+                <p>€{{ product.price }}</p>
+                <p>CURRENTLY OUT OF STOCK</p>
             </a>
         </div>
         {% endif %}
