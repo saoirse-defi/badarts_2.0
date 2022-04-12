@@ -6,13 +6,14 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="row">
     <h2>Upcoming Events</h2>
+</div>
+<div class="row">
     <div class="grid-container" id="event-grid-container">
         {% for event in event_list %}
             {% if not event.expired %}
-            <a target="_blank" href="{{ event.eventbrite_url }}">
+            <a class="event-item" target="_blank" href="{{ event.eventbrite_url }}">
                 {% if event.image_url %}
                     <img class="card-img responsive" src="{{ event.image_url }}" alt="{{ event.name }}">
                 {% else %}
@@ -26,10 +27,12 @@
 
 <div class="row">
     <h2>Expired Events</h2>
+</div>
+<div class="row">
     <div class="grid-container" id="event-grid-container">
         {% for event in event_list %}
             {% if event.expired %}
-            <a href="{{ event.eventbrite_url }}">
+            <a class="event-item" target="_blank" href="{{ event.eventbrite_url }}">
                 {% if event.image_url %}
                     <img class="card-img responsive" src="{{ event.image_url }}" alt="{{ event.name }}">
                 {% else %}
