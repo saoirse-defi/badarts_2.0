@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!--Start of main carousel-->
+    <div class="carousel slide" id="carousel-main" data-ride="carousel" data-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://ik.imagekit.io/iscs6ll976z/artists/thjy_DwAWV3Sew?ik-sdk-version=javascript-1.4.3&updatedAt=1649338317312" class="d-block w-100" id="r3" alt="1">
+                <div class="carousel-caption">
+                    <div class="container jumbo-text">
+                        <h3 class="display-4">Bad Arts Crew</h3>
+                            <p class="lead">Moyross, Limerick</p>
+                    </div>
+                </div>
+            </div>
+            {% for release in releases %}
+                {% if release.carousel_active %}
+                <div class="carousel-item" id="{{ release.title }}">
+                    <img src="{{ release.image_url }}" class="d-block w-100" id="r3" alt="1">
+                    <div class="carousel-caption">
+                        <div class="container jumbo-text">
+                            <h3 class="display-4">{{ release.title }}</h3>
+                            {% if release.blurb is not None %}
+                                <p class="lead">{{ release.blurb }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+<!--End of main carousel-->
+
+<div class="grid-container" id="artist-grid-container">
+    {% for artist in artists %}
+        {% if artist.active %}
+        <div class="artist-card center-align">
+            <div class="card-header">
+                {% if artist.image_url %}
+                <a href="{% url 'artist_profile' artist.id %}">
+                    <img class="card-img responsive" src="{{ artist.image_url }}" alt="{{ artist.name }}">
+                </a>
+                {% endif %}
+            </div>
+            <div class="card-body">
+                <h4>{{ artist.name }}</h4>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}
