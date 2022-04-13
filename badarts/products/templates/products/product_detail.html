@@ -20,7 +20,13 @@
                 <div class="product-text">
                     <h2>{{ product.name }}</h2><br>
                     <span class="product-price">€{{ product.price }}</span><br><br>
-                    <p>Item Description:<br>{{ product.description }}</p>
+                    <p>Item Description:</p>
+                    <p style="color: white;">{{ product.description }}</p>
+                    {% if not product.in_stock %}
+                        <span id="out-of-stock">OUT OF STOCK</span>
+                    {% else %}
+                        <span id="out-of-stock">Contact DJ Green for purchase.</span>
+                    {% endif %}
                 </div>
             </div>
         </div>

@@ -373,14 +373,16 @@ nav{
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1rem;
     justify-items: center;
+    padding-top: 15px;
 }
 
 #event-grid-container{
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
 }
 
 #artist-releases-container{
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 0 15px 0 15px;
 }
 
 footer{
@@ -473,8 +475,12 @@ footer{
 }
 
 #carousel-releases img{
-    width:100%;
+    width:auto;
     height:100%;
+}
+
+#artist-grid-container{
+    gap: 0;
 }
 
 @-moz-document url-prefix() {
@@ -724,6 +730,14 @@ footer{
     width: 100%;
 }
 
+#instock-merch-container{
+    padding: 25px 0 25px 0;
+}
+
+#outstock-merch-container{
+    padding: 25px 0 25px 0;
+}
+
 .merch-gallery{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -781,6 +795,13 @@ footer{
     margin-bottom: 10px;
 }
 
+#out-of-stock{
+    font-size: 1.25rem;
+    color: white;
+    border: 3px solid orangered;
+    padding: 5px;
+}
+
 .product-img img{
     width: 90%;
     height: auto;
@@ -791,6 +812,7 @@ footer{
     border: 3px solid orangered;
     background-color: black;
     color: white;
+    padding: 5px;
 }
 
 .product-description{
