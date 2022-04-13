@@ -827,6 +827,12 @@ footer{
     color: white;
 }
 
+#damz{
+    width: 100%; 
+    height: auto; 
+    padding-right: 90px;
+}
+
 .checkout-qty{
     width: 7.5%;
 }
@@ -1011,6 +1017,10 @@ footer{
 }
 
 @media only screen and (max-width: 768px){
+
+    #damz{
+        padding-right: 0;
+    }
 
    #contact-form{
        width: 100%;
