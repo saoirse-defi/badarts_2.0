@@ -21,23 +21,9 @@ def index(request):
 
 
 def contact(request):
-<<<<<<< HEAD
 
     template = 'homepage/contact.html'
     context = {
-=======
-    if request.method == 'POST':
-        form = MessageForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect(reverse('contact'))
-    else:
-        form = MessageForm()
-
-    template = 'homepage/contact.html'
-    context = {
-        'form': form,
->>>>>>> ab63daccccaabce151b69351c70a9fe63a8bb4ac
     }
 
     return render(request, template, context)
