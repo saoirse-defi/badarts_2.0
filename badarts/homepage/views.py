@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from .forms import MessageForm
 from .models import Artist, Release, Event, Message
 
 
