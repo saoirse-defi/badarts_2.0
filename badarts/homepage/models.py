@@ -47,6 +47,24 @@ class Release(models.Model):
         return str(self.title)
 
 
+class Photo(models.Model):
+    id = models.UUIDField(primary_key=True,
+                          default=uuid.uuid4,
+                          editable=False)
+    title = models.CharField(max_length=254, null=True, blank=True)
+    artists = models.ManyToManyField(Artist)
+    url = models.URLField(max_length=1024, null=True, blank=True)
+    image_url = models.URLField(max_length=1024, null=True, blank=True)
+    active = models.BooleanField(default=True, null=False, blank=False)
+    carousel_active = models.BooleanField(default=True, null=False, blank=False)
+
+    def __str__(self):
+        return str(self.title)
+
+    def display_performer_names(self):
+        return ', '.join([performer.name for performer in self.artists.all()])
+
+
 class Event(models.Model):
     id = models.UUIDField(primary_key=True,
                           default=uuid.uuid4,
