@@ -376,7 +376,7 @@ nav{
     padding-top: 15px;
 }
 
-#event-grid-container{
+.event-grid-container{
     grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
     padding: 0 25px;
 }
