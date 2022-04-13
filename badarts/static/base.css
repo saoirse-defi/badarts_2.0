@@ -377,7 +377,8 @@ nav{
 }
 
 #event-grid-container{
-    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    padding: 0 25px;
 }
 
 #artist-releases-container{
