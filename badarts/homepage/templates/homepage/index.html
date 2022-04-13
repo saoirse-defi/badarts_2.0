@@ -18,15 +18,29 @@
             {% for release in releases %}
                 {% if release.carousel_active %}
                 <div class="carousel-item" id="{{ release.title }}">
-                    <img src="{{ release.image_url }}" class="d-block w-100" id="r3" alt="1">
-                    <div class="carousel-caption">
-                        <div class="container jumbo-text">
-                            <h3 class="display-4">{{ release.title }}</h3>
-                            {% if release.blurb is not None %}
-                                <p class="lead">{{ release.blurb }}</p>
-                            {% endif %}
+                    {% if release.youtube_url %}
+                        <a href="{{ release.youtube_url }}" target="_blank">
+                            <img src="{{ release.image_url }}" class="d-block w-100" id="r3" alt="1">
+                            <div class="carousel-caption">
+                                <div class="container jumbo-text">
+                                    <h3 class="display-4">{{ release.title }}</h3>
+                                    {% if release.blurb is not None %}
+                                        <p class="lead">{{ release.blurb }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </a>
+                    {% else %}
+                        <img src="{{ release.image_url }}" class="d-block w-100" id="r3" alt="1">
+                        <div class="carousel-caption">
+                            <div class="container jumbo-text">
+                                <h3 class="display-4">{{ release.title }}</h3>
+                                {% if release.blurb is not None %}
+                                    <p class="lead">{{ release.blurb }}</p>
+                                {% endif %}
+                            </div>
                         </div>
-                    </div>
+                    {% endif %}
                 </div>
                 {% endif %}
             {% endfor %}

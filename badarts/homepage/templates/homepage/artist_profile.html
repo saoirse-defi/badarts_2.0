@@ -31,5 +31,21 @@
         </div>
     </div>
 </div>
+<h3 style="margin-top: 25px;">{{ artist.name }}'s Most Recent Releases</h3>
+<div class="row" style="margin-top: 25px;">
+    <div class="grid-container" id="artist-releases-container">
+        {% for release in releases %}
+            {% if release.artist == artist %}
+                {% if release.youtube_url %}
+                <a href="{{ release.youtube_url }}" target="_blank">
+                    <img src="{{ release.image_url }}" class="d-block w-100" id="r3" alt="1">
+                </a>
+                {% else %}
+                    <img src="{{ release.image_url }}" class="d-block w-100" id="r3" alt="1">
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}

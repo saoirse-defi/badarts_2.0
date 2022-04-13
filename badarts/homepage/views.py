@@ -53,10 +53,12 @@ def event_page(request, event_id):
 
 def artist_profile(request, artist_id):
     artist = get_object_or_404(Artist, pk=artist_id)
+    releases = Release.objects.all()
 
     template = 'homepage/artist_profile.html'
     context = {
         'artist': artist,
+        'releases': releases,
     }
 
     return render(request, template, context)
