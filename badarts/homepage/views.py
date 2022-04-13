@@ -1,19 +1,19 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from .models import Artist, Release, Event, Message
+from .models import Artist, Release, Event, Photo
 
 
 def index(request):
     artists = Artist.objects.all()
     releases = Release.objects.all()
     events = Event.objects.all()
-    messages = Message.objects.all()
+    photos = Photo.objects.all()
 
     template = 'homepage/index.html'
     context = {
         'artists': artists,
         'releases': releases,
         'events': events,
-        'messages': messages
+        'photos': photos
     }
 
     return render(request, template, context)
