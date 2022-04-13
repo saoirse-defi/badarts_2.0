@@ -1,16 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 
+<<<<<<< HEAD
 <h2>Inquire to purchase any of the items below</h2>
 <h3>Items in stock</h3>
 <div class="grid-container" id="instock-merch-container">
     {% for product in products %}
         {% if product.in_stock %}
+=======
+<h2>Enquire to purchase any of the items below</h2>
+<div class="grid-container" id="merch-container">
+    {% for product in products %}
+        {% if product.active %}
+>>>>>>> ab63daccccaabce151b69351c70a9fe63a8bb4ac
         <div class="merch">
             <img class="img-responsive merch-img" src="{{ product.image_url }}" alt="merch1"/>
             <a class="merch-text" href="{% url 'product_detail' product.sku %}">
                 <p>{{ product.name }}</p>
                 <p>€{{ product.price }}</p>
+<<<<<<< HEAD
             </a>
         </div>
         {% endif %}
@@ -27,6 +35,11 @@
                 <p>{{ product.name }}</p>
                 <p>€{{ product.price }}</p>
                 <p>CURRENTLY OUT OF STOCK</p>
+=======
+                {% if not product.in_stock %}
+                    <p>CURRENTLY OUT OF STOCK</p>
+                {% endif %}
+>>>>>>> ab63daccccaabce151b69351c70a9fe63a8bb4ac
             </a>
         </div>
         {% endif %}

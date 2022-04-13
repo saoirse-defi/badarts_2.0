@@ -1,2 +1,5 @@
+<<<<<<< HEAD
 release: python manage.py migrate
+=======
+>>>>>>> ab63daccccaabce151b69351c70a9fe63a8bb4ac
 web: gunicorn badarts.wsgi

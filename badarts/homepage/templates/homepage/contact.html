@@ -10,7 +10,31 @@
     <h3 class="text-center" id="contact-h3">Contact Us</h3>
 </div>
 <div class="container-fluid" id="contact-details">
+<<<<<<< HEAD
     <div id="map"> <!--Google map element-->
+=======
+    <div class="row">
+        <div class="col-sm-7">
+            <div id="map"> <!--Google map element-->
+            </div>
+        </div>
+        
+    <!--Start of contact form-->
+        <div class="col-sm-5" id="contact-f">
+            <p id="contact-text"></p>
+            <form id="contact-form" name="contact-form" action="{% url 'contact' %}" method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+                    {{ field | as_crispy_field }}
+                {% endfor %}
+            </form>
+            <div class="text-center text-md-left">
+                <button class="btn btn-dark" id="contact-button" type="submit" form="contact-form">Send</button>
+            </div>
+            <div class="status"></div>
+        </div>
+    </div>
+>>>>>>> ab63daccccaabce151b69351c70a9fe63a8bb4ac
 </div>
 <!--End of contact form-->
 {% endblock %}
@@ -42,10 +66,17 @@
 
         const westoninfo = //content for Google map info window
             '<div id="weston">' +
+<<<<<<< HEAD
             '<h3 id="firstHeading" class="firstHeading">Dooradoyle, Limerick</h3>' +
             '<div id="bodyContent">' +
             "<p>Damz Doherty's Studio" +
             "<p>damodoherty11.gti@gmail.com</p>"
+=======
+            '<h3 id="firstHeading" class="firstHeading">Weston, Limerick</h3>' +
+            '<div id="bodyContent">' +
+            "<p>Damz Doherty's Studio" +
+            "<p>conor.mcmorrough.gti@gmail.com</p>"
+>>>>>>> ab63daccccaabce151b69351c70a9fe63a8bb4ac
             "</div>" +
             "</div>";
 

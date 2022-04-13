@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+<<<<<<< HEAD
 <div class="row">
     <h2>Upcoming Events</h2>
 </div>
@@ -14,6 +15,15 @@
         {% for event in event_list %}
             {% if not event.expired %}
             <a class="event-item" target="_blank" href="{% if event.eventbrite_url %}{{ event.eventbrite_url }}{% else %}{% endif %}">
+=======
+
+<div class="row">
+    <h2>Upcoming Events</h2>
+    <div class="grid-container" id="event-grid-container">
+        {% for event in event_list %}
+            {% if not event.expired %}
+            <a target="_blank" href="{{ event.eventbrite_url }}">
+>>>>>>> ab63daccccaabce151b69351c70a9fe63a8bb4ac
                 {% if event.image_url %}
                     <img class="card-img responsive" src="{{ event.image_url }}" alt="{{ event.name }}">
                 {% else %}
@@ -27,12 +37,19 @@
 
 <div class="row">
     <h2>Expired Events</h2>
+<<<<<<< HEAD
 </div>
 <div class="row">
     <div class="grid-container" id="event-grid-container">
         {% for event in event_list %}
             {% if event.expired %}
             <a class="event-item" target="_blank" href="{{ event.eventbrite_url }}">
+=======
+    <div class="grid-container" id="event-grid-container">
+        {% for event in event_list %}
+            {% if event.expired %}
+            <a href="{{ event.eventbrite_url }}">
+>>>>>>> ab63daccccaabce151b69351c70a9fe63a8bb4ac
                 {% if event.image_url %}
                     <img class="card-img responsive" src="{{ event.image_url }}" alt="{{ event.name }}">
                 {% else %}

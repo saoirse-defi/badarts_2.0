@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-6">
+        <img id="artist-profile-image" src="{{ artist.image_url }}" alt="{{ artist.name }}"/>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <h2>{{ artist.name }}</h2>
+        </div>
+        <div class="row">
+            <ul class="social-icons">
+                <li><a class="instagram" href="{{ artist.instagram_url }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                <li><a class="spotify" href="{{ artist.spotify_url }}" target="_blank"><i class="fa fa-spotify"></i></a></li>
+                <li><a class="bandcamp" href="{{ artist.bandcamp_url }}" target="_blank"><i class="fa fa-bandcamp"></i></a></li>
+                <li><a class="youtube" href="{{ artist.youtube_url }}" target="_blank"><i class="fa fa-youtube"></i></a></li>   
+              </ul>
+        </div>
+        <div class="row">
+            <p class="truncate" id="artist-bio">{{ artist.bio }}</p>
+            <div class="truncate-container">
+                <button class="truncate-btn">See More...</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
