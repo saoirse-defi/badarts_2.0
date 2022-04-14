@@ -92,117 +92,6 @@ nav{
     color: orangered;
 }
 
-.modal-content{
-    background-color: #fefefe;
-}
-
-#flyoutModal{
-    width: 1000px;
-}
-
-#flyoutHeader{
-    color: black;
-}
-
-/* Flyout Modal code taken from https://www.solodev.com/blog/web-design/bootstrap/how-to-create-a-flyout-bootstrap-modal.stml */
-
-.fadeInRight {
-    -webkit-animation-name: fadeInRight;
-    animation-name: fadeInRight;
-  }
-  
-  @keyframes fadeInRight {
-    from {
-      opacity: 0;
-      transform: translate3d(100%, 0, 0);
-    }
-  
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
-  }
-  
-  @-webkit-keyframes fadeInRight {
-    from {
-      opacity: 0;
-      transform: translate3d(100%, 0, 0);
-    }
-  
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
-  }
-  
-  .modal-dialog {
-    margin: 0;
-  }
-  
-  .animated {
-    -webkit-animation-duration: 0.5s;
-    animation-duration: 0.5s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-  }
-  
-  .modal-header {
-    border-radius: 0;
-    background-color: #fefefe;
-    border-color: black;
-    align-items: center;
-    padding: 1.2rem;
-  }
-  
-  .modal-content {
-    border-radius: 0;
-    border: 0;
-    box-shadow: -12px 0 38px -14px rgba(0, 0, 0, 0.25);
-    background-clip: padding-box;
-  }
-
-  /* End of Flyout Modal styling */
-
-  .modal{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .modal-backdrop {
-    background-color: black;
-  }
-
-  .mailing-p{
-      color: black;
-  }
-  
-  .modal-button-container {
-    margin: 0 auto;
-    width: 90%;
-    max-width: 500px;
-  }
-
-.checkout-image img{
-    width: 50%;
-    height: auto;
-}
-
-.mailing{
-    color: black;
-}
-
-#mailing-button1{
-    background-color: black;
-    color: orangered;
-}
-
-#mailing-button1:hover{
-    color: white;
-    border: 1px solid white;
-}
-
 .site-footer
 {
   margin-top: 25px;
@@ -401,21 +290,6 @@ footer{
     bottom: 25px;
 }
 
-#mailing{
-    color: orangered;
-}
-
-#mailing-button2{
-    background-color: orangered;
-    color: black;
-}
-
-#mailing-button2:hover{
-    background-color: orangered;
-    color: white;
-    border: 1px solid white;
-}
-
 .footer-icons{
     display: flex;
     justify-content: space-evenly;
@@ -580,34 +454,6 @@ footer{
     transform-style: preserve-3d;
 }
 
-.card-wrapper:hover .content{
-    transform: rotateY(180deg);
-    transition: 1s;
-}
-
-
-.face-front{
-    backface-visibility: hidden;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    color: orangered;
-    z-index: 2;
-}
-
-.face-back{
-    backface-visibility: hidden;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    color: orangered;
-    border: 1px solid orangered;
-    z-index: 3;
-    transform: rotateY(180deg);
-}
-
 #artists{
     position: relative;
     bottom: 125px;
@@ -691,40 +537,6 @@ footer{
 
 .h2-box h2{
     text-decoration: none;
-}
-
-#event-container .event-title{
-    font-size: 1.25rem;
-    text-decoration: none;
-}
-
-#event-container .card-date{
-    font-size: 1rem;
-    border: 1px solid black;
-    color: white;
-}
-
-.card-block .card-title, .card-block .card-date, .card-block .card-text{
-    text-align: center;
-    color: black;
-}
-
-.card-block .ticket{
-    margin: 0 auto;
-    padding: 25px;
-
-}
-
-.card-event{
-    margin-bottom: 20px;
-    background-image: url(../img/ts.png);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#twitter-container{
-    width:100%;
-    height: 100%;
 }
 
 .shop-container{
@@ -857,30 +669,12 @@ footer{
     height: 400px;
 }
 
-#contact-form{
-    width: 75%;
-}
-
-#contact-form label{
-    color: orangered;
-}
-
 #contact-details{
     margin-bottom: 50px;
 }
 
 #message{
     height: 150px;
-}
-
-#contact-button{
-    background-color: orangered;
-    color: black;
-}
-
-#contact-button:hover{
-    color: white;
-    border: 1px solid white;
 }
 
 #video-h2{
