@@ -849,7 +849,7 @@ footer{
 }
 
 #contact-h3{
-    margin: 30px 0px;
+    margin: 30px 0 0 0;
 }
 
 #map{
@@ -901,6 +901,10 @@ footer{
     margin: 5px;
 }
 
+.margin-row{
+    margin-top: 25px;
+}
+
 @media only screen and (max-width: 1400px){
  
 }
@@ -917,6 +921,11 @@ footer{
 }
 
 @media only screen and (max-width: 1250px){
+
+    #out-of-stock{
+        font-size: 0.75rem;
+    }
+
     #carousel-releases img{
         height: 250px;
         width: 250px;
@@ -1019,6 +1028,18 @@ footer{
 
 @media only screen and (max-width: 768px){
 
+    .artist-row{
+        padding: 0 15px;
+    }
+
+    .recording-header{
+        text-align: center;
+    }
+
+    .margin-row{
+        margin-top: 0px;
+    }
+
     #damz{
         padding-right: 0;
     }
@@ -1072,13 +1093,6 @@ footer{
 
 }
 
-@media only screen and (max-width: 500px){
-
-    .merch .merch-img{
-        width: 75%;
-    }
-}
-
 @media only screen and (max-width: 450px){
     #video-wrapper{
         -moz-column-count: 1;
@@ -1090,18 +1104,8 @@ footer{
        right: 5px;
     }
 
-}
-
-@media only screen and (max-width: 380px){
-
-    .merch .merch-img{
-        width: 50%;
+    #contact-email{
+        overflow: auto;
     }
-}
 
-@media only screen and (max-width: 275px){
-
-    .merch .merch-img{
-        width: 25%;
-    }
 }
