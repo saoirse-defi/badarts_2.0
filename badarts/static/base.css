@@ -140,11 +140,13 @@ nav{
 {
   color:#737373
 }
+
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
   color:#3366cc;
   text-decoration:none;
 }
+
 .footer-links.inline li
 {
   display:inline-block
@@ -219,11 +221,13 @@ nav{
   -o-transition:all .2s linear;
   transition:all .2s linear
 }
+
 .social-icons a:active,.social-icons a:focus,.social-icons a:hover
 {
   color:#fff;
-  background-color:#29aafe
+  background-color:orangered
 }
+
 .social-icons.size-sm a
 {
   line-height:34px;
@@ -322,7 +326,8 @@ footer{
 }
 
 #carousel-main .carousel-item{
-    height: 486px;
+    width: 100%;
+    height: auto;
 }
 
 #carousel-main .carousel-control-prev-icon,
@@ -769,18 +774,18 @@ footer{
     }
 
      .jumbo-text{
-    width: 75%;
+    width: 33%;
     position: relative;
     left: 0px;
     top: 0px;
     }
 
     .display-4{
-    font-size: 1.25rem;
+    font-size: 0.75rem;
     }
 
     .lead{
-    font-size: 1rem;
+    font-size: 0.75rem;
     }
 }
 
@@ -856,15 +861,16 @@ footer{
     height: auto;
     }
 
+    /*
     #carousel-main .carousel-item{
     height: 365px;
     }
-
+    */
    
 
-     .card-event{
-       position: relative;
-       right: 20px;
+    .card-event{
+    position: relative;
+    right: 20px;
     }
 
     #right-col h3{
@@ -884,6 +890,9 @@ footer{
         display: none;
     }
 
+    .jumbo-text{
+        display: none;
+        }
 
 }
 
