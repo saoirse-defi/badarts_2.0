@@ -4,7 +4,7 @@
 {% block content %}
 
 <!--Start of main carousel.-->
-    <div class="carousel slide" id="carousel-main" data-ride="carousel" data-interval="3000">
+    <div id="carousel-main" class="carousel slide" data-ride="carousel" data-interval="3000">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="https://ik.imagekit.io/iscs6ll976z/artists/thjy_DwAWV3Sew?ik-sdk-version=javascript-1.4.3&updatedAt=1649338317312" class="d-block w-100" id="r3" alt="1">
@@ -41,6 +41,14 @@
                 {% endif %}
             {% endfor %}
         </div>
+        <a class="carousel-control-prev" href="#carousel-main" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carousel-main" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
     </div>
 <!--End of main carousel-->
 
