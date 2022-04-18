@@ -326,8 +326,8 @@ footer{
 }
 
 #carousel-main .carousel-item{
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 420px;
 }
 
 #carousel-main .carousel-control-prev-icon,
