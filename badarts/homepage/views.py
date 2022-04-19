@@ -75,7 +75,7 @@ def gallery(request):
 
     photos = Photo.objects.all()
 
-    template = 'homepage/recording.html'
+    template = 'homepage/gallery.html'
     context = {
         'photos': photos,
     }
