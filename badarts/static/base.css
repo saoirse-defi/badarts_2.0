@@ -279,6 +279,20 @@ nav{
     padding: 0 15px 0 15px;
 }
 
+#image-gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    justify-items: center;
+    padding-top: 15px;
+}
+
+.grid-item img{
+    max-width: 100%;
+    height: auto;
+    margin: 5px;
+}
+
 footer{
     color: orangered;
     background-color: black;
