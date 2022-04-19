@@ -69,3 +69,16 @@ def recording(request):
     context = {}
 
     return render(request, template, context)
+
+
+def gallery(request):
+
+    photos = Photo.objects.all()
+
+    template = 'homepage/recording.html'
+    context = {
+        'photos': photos,
+    }
+
+    return render(request, template, context)
+

@@ -9,4 +9,5 @@ urlpatterns = [
     path('recording', views.recording, name='recording'),
     path('events/<uuid:event_id>', views.event_page, name='event_page'),
     path('<uuid:artist_id>', views.artist_profile, name='artist_profile'),
+    path('gallery', views.gallery, name='gallery'),
 ]
