@@ -57,6 +57,7 @@ class Photo(models.Model):
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     active = models.BooleanField(default=True, null=False, blank=False)
     carousel_active = models.BooleanField(default=True, null=False, blank=False)
+    gallery_active = models.BooleanField(default=True, null=False, blank=False)
 
     def __str__(self):
         return str(self.title)
