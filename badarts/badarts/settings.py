@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'products',
     'static',
     'videos',
+    'apis',
 
     'allauth',
     'allauth.account',
@@ -57,6 +58,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'django_countries',
     'whitenoise.runserver_nostatic',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

@@ -86,4 +86,3 @@ class Event(models.Model):
     def display_performer_names(self):
         return ', '.join([performer.name for performer in self.artists.all()])
 
-
