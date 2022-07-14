@@ -22,6 +22,9 @@ class Artist(models.Model):
     def format_bio(self):
         return str(self.bio.replace('.', '.<br>'))
 
+    def get_id(self):
+        return str(self.id)
+
 
 class Release(models.Model):
     id = models.UUIDField(primary_key=True,

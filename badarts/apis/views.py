@@ -15,10 +15,10 @@ from homepage.models import Artist
 @api_view(['GET', ])
 def api_artist_view(request, artist_id):
     try:
-        artists = Artist.objects.get(pk=artist_id)
+        artist = Artist.objects.get(pk=artist_id)
     except Artist.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = ArtistSerializer(artists)
+        serializer = ArtistSerializer(artist)
         return Response(serializer.data)

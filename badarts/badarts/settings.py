@@ -42,13 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
-    'badarts',
-    'homepage',
-    'products',
-    'static',
-    'videos',
-    'apis',
-
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -59,6 +52,13 @@ INSTALLED_APPS = [
     'django_countries',
     'whitenoise.runserver_nostatic',
     'rest_framework',
+
+    'badarts',
+    'homepage',
+    'products',
+    'static',
+    'videos',
+    'apis',
 ]
 
 MIDDLEWARE = [
