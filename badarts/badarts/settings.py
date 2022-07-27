@@ -26,7 +26,7 @@ dotenv_file = os.path.join(BASE_DIR, ".env")
 if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
 
-# UPDATE secret key
+# UPDATE secret key,
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: keep the secret key used in production secret!
